@@ -1,0 +1,21 @@
+<view>
+    <view class="pageTitleArea" >
+        <text class="pageTitle">
+            请选择您将要加入的班级
+        </text>
+    </view>
+    <view class="weui-cells__title">选择班级</view>
+    <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="radioChange">
+            <label class="weui-cell weui-check__label" wx:for="{{course.classGroupList}}" wx:key="{{item.value}}">
+                <radio class="weui-check" value="{{item.id}}" checked="{{item.checked}}"/>
+                <view class="weui-cell__bd">{{item.name}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                    <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                </view>
+            </label>
+        </radio-group>
+    </view>
+    <button class="weui-btn themeBackgroundColor" style="margin:20px 15px"  type="primary" disabled="{{isLoading}}"  bindtap="submit">加入课程</button>
+
+</view>

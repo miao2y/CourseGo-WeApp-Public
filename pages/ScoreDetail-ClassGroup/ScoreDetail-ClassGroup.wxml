@@ -1,0 +1,18 @@
+<view>
+    <view class="weui-cells__title">{{classGroupName}}</view>
+    <view class="container">
+        <view class="table">
+            <view class="tr">
+                <view class="th">学号</view>
+                <view class="th">姓名</view>
+                <view class="th">正确率</view>
+            </view>
+            <view class="tr" wx:for="{{scoreList.score}}" wx:for-item="score">
+                <view class="td">{{score.student.number}}</view>
+                <view class="td">{{score.student.legalName}}</view>
+                <view class="td">{{score.score}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+

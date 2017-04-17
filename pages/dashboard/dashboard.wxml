@@ -1,0 +1,91 @@
+<!--dashboard.wxml-->
+<view>
+    <view class="" style="border:none"  wx:if="{{userType == 'teacher'}}">
+        <view class="weui-grids gridsBackgroundColor">
+            <block>
+                <navigator url="../SendMessage/SendMessage" class="weui-grid grid"  hover-class="weui-grid_active">
+                    <i class="weui-grid__icon fa fa-2x fa-commenting gridsColor gridIcon"/>
+                    <view class="weui-grid__label gridsColor">发送通知</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid grid"  hover-class="weui-grid_active">
+                    <i class="weui-grid__icon fa fa-2x fa-edit gridsColor gridIcon" />
+                    <view class="weui-grid__label gridsColor">练习列表</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid grid" hover-class="weui-grid_active">
+                    <i class="weui-grid__icon fa fa-2x fa-cloud gridsColor gridIcon" />
+                    <view class="weui-grid__label gridsColor">云题库</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+    <view class="" style="border:none"  wx:if="{{userType == 'student'}}">
+        <view class="weui-grids gridsBackgroundColor">
+            <block>
+                <navigator url="../AddCourse/AddCourse" class="weui-grid grid"  hover-class="weui-grid_active">
+                    <i class="weui-grid__icon fa fa-2x fa-plus-square gridsColor gridIcon"/>
+                    <view class="weui-grid__label gridsColor">加入课程</view>
+                </navigator>
+            </block>
+            <!--<block>-->
+                <!--<view url="../AddCourse/AddCourse" class="weui-grid grid"  hover-class="weui-grid_active">-->
+                    <!--<i class="weui-grid__icon fa fa-2x fa-plus-square gridsColor gridIcon"/>-->
+                    <!--<view class="weui-grid__label gridsColor"></view>-->
+                <!--</view>-->
+            <!--</block>-->
+            <!--<block>-->
+                <!--<view url="../AddCourse/AddCourse" class="weui-grid grid"  hover-class="weui-grid_active">-->
+                    <!--<i class="weui-grid__icon fa fa-2x fa-plus-square gridsColor gridIcon"/>-->
+                    <!--<view class="weui-grid__label gridsColor">加入课程</view>-->
+                <!--</view>-->
+            <!--</block>-->
+            <!--<block>-->
+            <!--<navigator url="" class="weui-grid grid"  hover-class="weui-grid_active">-->
+            <!--<i class="weui-grid__icon fa fa-2x fa-commenting gridsColor gridIcon" />-->
+            <!--<view class="weui-grid__label gridsColor">练习列表</view>-->
+            <!--</navigator>-->
+            <!--</block>-->
+            <!--<block>-->
+            <!--<navigator url="" class="weui-grid grid" hover-class="weui-grid_active">-->
+            <!--<i class="weui-grid__icon fa fa-2x fa-commenting gridsColor gridIcon" />-->
+            <!--<view class="weui-grid__label gridsColor">Grid</view>-->
+            <!--</navigator>-->
+            <!--</block>-->
+        </view>
+    </view>
+    <view wx:for="{{timeLine}}"  style="padding:0;margin-top:10px;background:#ffffff">
+        <navigator url="../MessageList/MessageList?courseId={{item.course.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx-if="{{item.type =='courseNotice'}}">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.course.avatarUrl}}" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title" style="color:#003366;display:inline">{{item.course.name}}</view>
+                <view class="weui-media-box__desc" style="display:inline;margin-left:15px">发送了一条新通知</view>
+                <view class="weui-media-box__desc">{{item.courseNotice.title}}</view>
+            </view>
+        </navigator>
+        <navigator class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" url="../ExerciseDetail/ExerciseDetail?exerciseId={{item.courseExercise.id}}"  wx-if="{{item.type =='courseExercise' && userType == 'teacher'}}">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.course.avatarUrl}}" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title" style="color:#003366;display:inline">{{item.course.name}}</view>
+                <view class="weui-media-box__desc" style="display:inline;margin-left:15px">发送了一个新练习</view>
+                <view class="weui-media-box__desc">{{item.courseExercise.name}}</view>
+            </view>
+        </navigator>
+        <navigator class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" url="../FinishExercise/FinishExercise?exerciseId={{item.courseExercise.id}}"  wx-if="{{item.type =='courseExercise' && userType == 'student'}}">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.course.avatarUrl}}" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title" style="color:#003366;display:inline">{{item.course.name}}</view>
+                <view class="weui-media-box__desc" style="display:inline;margin-left:15px">发送了一个新练习</view>
+                <view class="weui-media-box__desc">{{item.courseExercise.name}}</view>
+            </view>
+        </navigator>
+    </view>
+</view>

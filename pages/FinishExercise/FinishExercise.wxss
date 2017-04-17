@@ -1,0 +1,12 @@
+.answerContainer{
+    border: 1rpx solid #E5E5E5;
+    margin:0 15px 10px;
+}
+.noBorder:after{
+    border:none;
+}
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

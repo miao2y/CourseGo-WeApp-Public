@@ -1,0 +1,34 @@
+<view class="page">
+    <view class="weui-panel " style="height:100%">
+        <view class="weui-panel__hd">题目</view>
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text" style="text-overflow:inherit;white-space: normal;" >{{questionInfo.topic}}</view>
+                <!--<view class="weui-media-box__desc" wx:for="{{question.choiceList}}"  wx:for-item="choice" wx:key="choice.label">adwadawdawd</view>-->
+                <view class="weui-media-box__info">
+                    <view class="weui-media-box__info__meta">题目类型：{{questionInfo.type}}</view>
+                    <!--<view class="weui-media-box__info__meta"></view>-->
+                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">标签：<text wx:for="{{questionInfo.tags}}">{{item}} </text></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-panel " style="height:100%">
+        <view class="weui-panel__hd">选项</view>
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text">
+                <!--<view class="weui-media-box__title weui-media-box__title_in-text">{{questionInfo.topic}}</view>-->
+                <view class="weui-media-box__title weui-media-box__title_in-text" wx:for="{{questionInfo.choiceList}}"  wx:for-item="choice" wx:key="choice.label">{{choice.label}}.{{choice.value}}</view>
+                <view class="weui-media-box__title weui-media-box__title_in-text" >答案：<text wx:for="{{questionInfo.rightAnswerList}}" wx:for-item="rightAnswer" >{{rightAnswer}} </text></view>
+
+                <!--<view class="weui-media-box__info">-->
+                    <!--<view class="weui-media-box__info__meta">题目类型：{{questionInfo.type}}</view>-->
+                    <!--<view class="weui-media-box__info__meta">标签：<text wx:for="{{questionInfo.tags}}">{{item}} </text></view>-->
+                    <!--<view class="weui-media-box__info__meta weui-media-box__info__meta_extra"></view>-->
+                <!--</view>-->
+            </view>
+        </view>
+    </view>
+    <button class="weui-btn" type="warn" style="margin:15px" bindtap="deleteQuestion" disabled="{{isLoading}}">从题库中移除本题</button>
+
+</view>

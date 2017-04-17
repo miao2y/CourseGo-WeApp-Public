@@ -1,0 +1,24 @@
+/**dashboard.wxss**/
+.grid{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    border:none;
+    overflow: hidden;
+}
+.gridIcon{
+    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+.weui-grid_active{
+    background: transparent;
+}
+page{
+    background: #F8F8F8;
+}
+.weui-media-box__thumb{
+    border-radius: 5px;
+}

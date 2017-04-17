@@ -1,0 +1,11 @@
+
+.coverArea{
+    padding: 0;
+
+}
+.cover{
+    width:100%;
+}
+.listArea{
+    /*padding: 15px;*/
+}

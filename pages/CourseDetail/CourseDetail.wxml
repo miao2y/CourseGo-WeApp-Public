@@ -1,0 +1,83 @@
+<view >
+    <view class="coverArea">
+        <image class="cover" src="{{courseInfo.coverUrl}}"></image>
+    </view>
+    <view class="listArea">
+        <view class="weui-cells__title">基本信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">课程名</view>
+                <view class="weui-cell__ft">{{courseInfo.name}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">开课日期</view>
+                <view class="weui-cell__ft">{{courseInfo.beginDate}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">节课日期</view>
+                <view class="weui-cell__ft">{{courseInfo.endDate}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">开课周数</view>
+                <view class="weui-cell__ft">第 {{courseInfo.nowWeek}} 周 / 共 {{courseInfo.totalWeek}} 周</view>
+            </view>
+        </view>
+        <view class="weui-cells__title">课程信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">教师姓名</view>
+                <view class="weui-cell__ft">{{courseInfo.teacher.legalName}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">学校</view>
+                <view class="weui-cell__ft">{{courseInfo.school.name}}</view>
+            </view>
+        </view>
+        <view class="weui-cells__title">通知</view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="../SendMessage/SendMessage?courseId={{courseInfo.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">发送通知</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="../MessageList/MessageList?courseId={{courseInfo.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">历史通知</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        <view class="weui-cells__title" wx-if="{{userType == 'teacher'}}">练习</view>
+        <view class="weui-cells weui-cells_after-title" wx-if="{{userType == 'teacher'}}">
+            <navigator url="../ExerciseList/ExerciseList?courseId={{courseInfo.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">练习列表</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="../QuestionList/QuestionList?courseId={{courseInfo.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">题库管理</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+
+            <!--<navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">-->
+            <!--<view class="weui-cell__bd">cell standard</view>-->
+            <!--<view class="weui-cell__ft weui-cell__ft_in-access"></view>-->
+            <!--</navigator>-->
+        </view>
+        <!--<view class="weui-cells__title">带图标、说明的列表项</view>-->
+        <!--<view class="weui-cells weui-cells_after-title">-->
+            <!--<view class="weui-cell">-->
+                <!--<view class="weui-cell__hd">-->
+                    <!--<image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>-->
+                <!--</view>-->
+                <!--<view class="weui-cell__bd">标题文字</view>-->
+                <!--<view class="weui-cell__ft">说明文字</view>-->
+            <!--</view>-->
+            <!--<view class="weui-cell">-->
+                <!--<view class="weui-cell__hd">-->
+                    <!--<image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>-->
+                <!--</view>-->
+                <!--<view class="weui-cell__bd">标题文字</view>-->
+                <!--<view class="weui-cell__ft">说明文字</view>-->
+            <!--</view>-->
+        <!--</view>-->
+    </view>
+
+
+</view>

@@ -1,0 +1,73 @@
+<!--fillData.wxml-->
+<view class="page" >
+    <view wx:if="{{step == 0}}" class="headerContainer {{step == 0 ? 'animated fadeInLeft':'animated fadeOutLeft'}}" >
+        <view class='header'>欢迎您使用CourseGo</view>
+        <view class='subheader'>请选择您的职业</view>
+    </view>
+    <view wx:if="{{step == 0}}" class="choosePosition">
+        <view class="position themeStudentBackgroundColor {{step == 0 ? 'animated fadeInLeft':'animated fadeOutLeft'}}" bindtap="chooseStudent" >
+            <text class="fa fa-graduation-cap fa-3x themeWhiteColor" ></text>
+            <text class="positionName">学生</text>
+        </view>
+        <view class="position themeTeacherBackgroundColor {{step == 0 ? 'animated fadeInLeft':'animated fadeOutLeft'}}" bindtap="chooseTeacher" >
+            <text class="fa fa-book fa-3x themeWhiteColor" ></text>
+            <text class="positionName">教师</text>
+        </view>
+    </view>
+    <view wx:if="{{step == 1}}" style="position:absolute;top:0;left:0px;right:0px;" class="{{step == 1 ? 'animated fadeInRight':'animated fadeOutRight'}}">
+        <view class="weui-cells__title">密码</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="您输入密码" type="password" bindinput="setPassword" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">确认密码 <text wx:if="{{!passwordCheckCondition}}" class="warnColor" style="margin-left: 5px;">您两次输入的密码不一致</text></view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindblur="checkPassword" placeholder="请再次输入您的密码" type="password" bindinput="setConfirmPassword" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">真实姓名</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入姓名" type="text" bindinput="setLegalName" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">{{numberName}}</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入{{numberName}}" type="text" bindinput="setNumber" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">邮箱</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入邮箱" type="text" bindinput="setEmail" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">选择您的学校</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd">
+                    <picker bindchange="setSchool" value="{{index}}" range="{{schoolList}}" range-key="name">
+                        <view class="weui-select">{{schoolName}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="container submitContainer">
+            <button class="weui-btn" type="default" bindtap="reChooseType">上一步</button>
+            <button class="weui-btn themeBackgroundColor" type="primary"  bindtap="submitBasicInformation">完成注册</button>
+        </view>
+    </view>
+</view>

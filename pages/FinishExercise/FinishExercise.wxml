@@ -1,0 +1,94 @@
+<view>
+    <!--题目-->
+    <view style="background:#ffffff">
+        <view class="weui-panel__hd question">
+            <text>{{question.type}}</text>
+            <view class="question">
+                <button class="weui-btn mini-btn themeBackgroundColor" bindtap="submit" type="primary" size="mini">提交</button>
+            </view>
+        </view>
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text" style="text-overflow:inherit;white-space: normal;margin-bottom:0" >{{question.topic}}</view>
+            </view>
+        </view>
+    </view>
+    <!--单选题-->
+    <view wx-if="{{question.type == '单选'}}">
+
+        <!--选项-->
+        <view class="weui-cells__title">请选择</view>
+        <view class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="radioChange">
+                <label class="weui-cell weui-check__label" wx:for="{{question.choiceList}}"  wx:for-item="choice">
+                    <radio class="weui-check" value="{{choice.label}}" checked="{{choice.checked}}"/>
+
+                    <view class="weui-cell__bd">{{choice.value}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{choice.checked}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <!--多选题-->
+    <view wx-if="{{question.type == '多选'}}">
+        <!--选项-->
+        <view class="weui-cells__title">请选择</view>
+        <view class="weui-cells weui-cells_after-title">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="weui-cell weui-check__label" wx:for="{{question.choiceList}}"  wx:for-item="choice">
+                    <checkbox class="weui-check" value="{{choice.label}}" checked="{{choice.checked}}"/>
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!choice.checked}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{choice.checked}}"></icon>
+                    </view>
+                    <view class="weui-cell__bd">{{choice.value}}</view>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+    <!--判断题-->
+    <view wx-if="{{question.type == '判断'}}">
+
+        <!--选项-->
+        <view class="weui-cells__title">请选择</view>
+        <view class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="judgeChange">
+                <label class="weui-cell weui-check__label">
+                    <radio class="weui-check" value="正确" checked="{{questionList[state].answer[0] == '正确'}}"/>
+                    <view class="weui-cell__bd">正确</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{questionList[state].answer[0] == '正确'}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <radio class="weui-check" value="错误" checked="{{questionList[state].answer[0] == '错误'}}"/>
+                    <view class="weui-cell__bd">错误</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{questionList[state].answer[0] == '错误'}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <!--填空题-->
+    <view wx-if="{{question.type == '填空'}}">
+        <!--选项-->
+        <view class="weui-cells__title">请输入</view>
+        <view class="weui-cells weui-cells_after-title"  >
+            <view class="weui-cell weui-cell_input" wx:for="{{question.fields}}" wx:for-item="field">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入答案" bindinput="inputChange" id="{{index}}" value="{{questionList[state].answer[index]}}" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line" style="position:fixed;bottom:50px;left:0;right:0">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line" style="background:#f8f8f8">第 {{state+1}} 题 / 共 {{length}} 题</view>
+    </view>
+    <view class="container submitContainer" style="position:fixed;bottom:0;left:15px;right:15px">
+        <button class="weui-btn"  bindtap="previousQuestion" style="{{(state > 0)? '':'visibility:hidden;'}}" >上一题</button>
+        <button class="weui-btn themeBackgroundColor" style="{{(state < length - 1)? '':'visibility:hidden;'}}" type="primary"   bindtap="nextQuestion">下一题</button>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+.weui-bar__item_on .weui-navbar__title{
+    color: #2196F3!important;
+}
+.weui-navbar__slider{
+    background: #2196F3!important;
+}

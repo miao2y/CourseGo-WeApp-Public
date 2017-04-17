@@ -1,0 +1,32 @@
+.page{
+    padding: 0 15px;
+}
+
+.choosePosition{
+    /*background: #2196F3;*/
+    margin-top: 30px;
+    width:100%;
+    height: 300px;
+}
+.position{
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50%;
+    width: 100%;
+}
+
+.position + .position{
+    margin-top: 30px;
+}
+.position .fa{
+}
+.positionName{
+    font-size: 30px;
+    color: #ffffff;
+}
+.fadeInLeft ,.fadeInRight,.fadeOutLeft,.fadeOutRight{
+    animation-duration: 400ms;
+}

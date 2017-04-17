@@ -1,0 +1,9 @@
+.classGroup{
+    display: inline-block;
+}
+.classGroup + .classGroup{
+    margin-left: 5px;
+}
+.weui-media-box__thumb{
+    border-radius: 5px;
+}

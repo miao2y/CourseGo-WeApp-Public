@@ -1,0 +1,16 @@
+<view>
+    <navigator url="../SendMessage/SendMessage?courseId={{courseId}}" class="sendNewMessage">发送新通知</navigator>
+    <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text" wx:for="{{messageList}}" wx:for-item="message">
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{message.title}}</view>
+                <view class="weui-media-box__desc">{{message.content}}</view>
+                <view class="weui-media-box__info">
+                    <view class="weui-media-box__info__meta">{{message.publishedTimeCal}}</view>
+                    <!--<view class="weui-media-box__info__meta"></view>-->
+                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra"><text wx:for="{{message.classGroupList}}" wx:for-item="classGroup" >{{classGroup.name}} </text></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

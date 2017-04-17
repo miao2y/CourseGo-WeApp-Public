@@ -1,0 +1,21 @@
+.page__title{
+    text-align:center;
+    font-size:30px;
+}
+.page__hd{
+    padding-top:10px
+}
+.page__desc{
+    text-align:center;
+}
+.bigger_desc{
+    font-size: 20px;
+}
+.weui-btn +.weui-btn{
+    margin-top: 25px;
+}
+.page__bd_spacing{
+    margin-top: 125rpx;
+    margin-left:50rpx;
+    margin-right:50rpx;
+}

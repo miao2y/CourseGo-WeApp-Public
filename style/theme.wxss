@@ -1,0 +1,41 @@
+.themeBackgroundColor{
+    background: #2196F3!important;
+    color: #ffffff;
+}
+.themeBackgroundColor:active{
+    background: #23a7f4!important;
+    color: #D9D9D9;
+}
+.themeFontColor{
+    color: #2196F3!important;
+}
+.themeTeacherBackgroundColor{
+    background: #2196F3;
+}
+.themeStudentBackgroundColor{
+    background: #00B3BC;
+}
+.warnColor{
+    color: #FF2C00;
+}
+.gridsBackgroundColor{
+    border: none;
+    background: #373E40!important;
+}
+.gridsColor{
+    border: none;
+    color: #ffffff;
+}
+.pressable:active{
+    background: #e8e8e8;
+}
+
+.goingColor{
+    color: #009900;
+}
+.finishedColor{
+    color: #00B3BC;
+}
+.themeWhiteColor{
+    color:#ffffff
+}

@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="weui-msg">
+        <view class="weui-msg__icon-area">
+            <icon type="success" size="93"></icon>
+        </view>
+        <view class="weui-msg__text-area">
+            <view class="weui-msg__title">发送成功</view>
+            <view class="weui-msg__desc">您已成功发送通知给{{classGroupNames}}，他们将会在微信中收到您发送的信息</view>
+        </view>
+        <view class="weui-msg__opr-area">
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="primary" bindtap="goBack">返回{{from}}</button>
+                <button class="weui-btn" style="margin-top:15px" bindtap="continueSendMessage" type="default">继续发送</button>
+            </view>
+        </view>
+        <view class="weui-msg__extra-area">
+            <view class="weui-footer">
+                <view class="weui-footer__links">
+                    <navigator url="" class="weui-footer__link">CourseGo</navigator>
+                </view>
+                <!--<view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>-->
+            </view>
+        </view>
+    </view>
+</view>

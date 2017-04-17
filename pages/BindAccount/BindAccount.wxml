@@ -1,0 +1,27 @@
+<view>
+    <view class="page__hd">
+        <view class="page__title themeFontColor" >CourseGo</view>
+        <view class="page__desc bigger_desc" >请输入您的手机号与密码</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells__title">手机号</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入您的手机号" type="number" bindinput="setAccount" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">密码</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input"  placeholder="请输入您的密码" type="password" bindinput="setPassword" />
+                </view>
+            </view>
+        </view>
+        <button class="weui-btn themeBackgroundColor" type="primary" bindtap="login">登陆并绑定微信号</button>
+
+    </view>
+
+</view>

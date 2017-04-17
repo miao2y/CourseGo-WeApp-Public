@@ -1,0 +1,54 @@
+{
+  "pages":[
+    "pages/dashboard/dashboard",
+    "pages/Login/Login",
+    "pages/BindTelephone/BindTelephone",
+    "pages/BindAccount/BindAccount",
+    "pages/index/index",
+    "pages/fillData/fillData",
+    "pages/SendMessage/SendMessage",
+    "pages/SendMessage/SendMessageSuccess/SendMessageSuccess",
+    "pages/CourseList/CourseList",
+    "pages/CourseDetail/CourseDetail",
+    "pages/MessageList/MessageList",
+    "pages/QuestionList/QuestionList",
+    "pages/QuestionDetail/QuestionDetail",
+    "pages/ExerciseList/ExerciseList",
+    "pages/ExerciseDetail/ExerciseDetail",
+    "pages/FinishExercise/FinishExercise",
+    "pages/ScoreDetail-ClassGroup/ScoreDetail-ClassGroup",
+    "pages/AddCourse/AddCourse",
+    "pages/AddClassGroup/AddClassGroup",
+    "pages/More/More",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"#F8F8F8",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "CourseGo",
+    "navigationBarTextStyle":"black",
+    "backgroundColor":"#F8F8F8"
+  },
+  "tabBar": {
+    "color":"#bbb",
+    "selectedColor":"#2196F3",
+    "borderStyle":"black",
+    "list": [
+      {
+      "pagePath": "pages/dashboard/dashboard",
+      "iconPath":"style/images/safari-inactive.png",
+      "selectedIconPath":"style/images/safari-active.png",
+      "text": "首页"
+      }, {
+      "pagePath": "pages/CourseList/CourseList",
+      "iconPath":"style/images/course-inactive.png",
+        "selectedIconPath":"style/images/course-active.png",
+      "text": "课程"
+    }, {
+      "pagePath": "pages/More/More",
+      "iconPath":"style/images/more-inactive.png",
+      "selectedIconPath":"style/images/more-active.png",
+      "text": "更多"
+    }]
+  }
+}

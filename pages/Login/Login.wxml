@@ -1,0 +1,13 @@
+<view>
+    <view class="page__hd">
+        <view class="page__title themeFontColor" >CourseGo</view>
+        <view class="page__desc bigger_desc" >请选择一种登陆方式</view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <button class="weui-btn themeBackgroundColor" type="primary" bindtap="goToRegister">创建新账号</button>
+        <!--<button class="weui-btn" type="primary" disabled="true">页面主操作 Disabled</button>-->
+
+        <button class="weui-btn" type="default" bindtap="goToBindAccount">使用现有账号</button>
+        <!--<button class="weui-btn" type="default" disabled="true">页面次要操作 Disabled</button>-->
+    </view>
+</view>
